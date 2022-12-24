@@ -27,7 +27,7 @@ exports.addExperience = async (req, res) => {
         });
 
         await newExperience.save();
-        res.json(newExperience);
+        res.json("experience added");
 
     } catch (error) {
         res.status(500).json({msg:'server problem'})

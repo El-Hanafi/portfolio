@@ -39,6 +39,7 @@ mongoose.connect(URI, {
 app.use('/', require('./routes/aboutRoute'));
 app.use('/', require('./routes/educRoute'));
 app.use('/', require('./routes/experienceRoute'));
+app.use('/user', require('./routes/userRoute'));
 
 
 
