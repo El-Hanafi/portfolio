@@ -1,7 +1,7 @@
 const userSchema = require('../models/userModel');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
-
+const auth = require('../middlewares/auth');
 
 const userCtrl = {
 
@@ -65,7 +65,23 @@ const userCtrl = {
     
     //verify
     verifyToken: async (req,res) => {
-        res.send('verify')
+        try {
+
+            const token = req.header("Authorization")
+            if(!token) return res.send(false)
+
+            jwt.verify(token,process.env.TOKEN_SECRET, async(error, verified)=>{
+                if(error) return res.send(false)
+
+                const user = await userSchema.findById(verified.id)
+                if(!user) return res.send(false)
+
+                return res.send(true)
+            })
+
+        } catch (error) {
+            res.status(500).json({msg:error.message})
+        }
     }
 
 }
