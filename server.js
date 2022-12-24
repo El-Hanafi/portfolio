@@ -13,14 +13,33 @@ const app = express();
 app.use(express.json());
 app.use(cors());
 
-// routes
+//.................connect to mongodb
+const URI = process.env.MONGO_URL;
+
+mongoose.set('strictQuery', false);
+
+mongoose.connect(URI, {
+    useNewUrlParser:true,
+    useUnifiedTopology: true
+}, (err)=>{
+
+    if(err) throw err;
+    else{
+        return console.log('mongodb connected successfully')
+    }
+});
+
+// ...............routes
 // app.get('/', (req, res)=> {
 
 //     res.send('hello from server')
 // });
 
-// get about user
+// routes
 app.use('/', require('./routes/aboutRoute'));
+app.use('/', require('./routes/educRoute'));
+app.use('/', require('./routes/experienceRoute'));
+
 
 
 
