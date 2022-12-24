@@ -12,11 +12,11 @@ const userSchema = new mongoose.Schema({
         required: true,
         unique:true
     },
-    username:{
+    password:{
         type: String,
         required: true,
     }
 },
 {timestamps: true});
 
-module.exports = mongoose.model("user, userSchema")
+module.exports = mongoose.model("user", userSchema)
