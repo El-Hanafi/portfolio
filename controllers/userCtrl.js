@@ -2,6 +2,8 @@ const userSchema = require('../models/userModel');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 const auth = require('../middlewares/auth');
+const fileUpload = require('express-fileupload');
+
 
 const userCtrl = {
 
