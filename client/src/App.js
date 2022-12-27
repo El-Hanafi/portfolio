@@ -25,34 +25,27 @@ function App() {
       {/* navbar component*/}
 
       <Navbar />
+
       <Routes>
-        <Route exact  path="/" element={<Header/>} />
 
-        <Route exact  path="/" element={<About/>} />
+        <Route exact  path="/" element={<><Header /><About /><Education /><Projects /><Experience /><Contact /></>} />
 
-        <Route exact  path="/" element={<Education/>} />
+        <Route exact  path="/login" element={Login} />
+        <Route exact  path="/admin" element={Admin} />
+        <Route exact  path="/edit/:id" element={Education} />
 
-        <Route exact  path="/" element={<Projects/>} />
-
-        <Route exact  path="/" element={<Experience/>}/>
-
-        <Route exact  path="/" element={<Contact/>}/>
-
+        <Route exact  path="/editEducation/:id" element={EditEducation} />
+        <Route exact  path="/editProject/:id" element={EditProjects} />
+        <Route exact  path="/editExperience/:id" element={EditExperience} />
 
 
-        <Route exact  path="/login" element={<Login/>} />
-        <Route exact  path="/admin" element={<Admin/>} />
-        <Route exact  path="/edit/:id" element={<Education/>} />
 
-        <Route exact  path="/editEducation/:id" element={<EditEducation/>} />
-        <Route exact  path="/editProject/:id" element={<EditProjects/>} />
-        <Route exact  path="/editExperience/:id" element={<EditExperience/>} />
-      </Routes>
-        
-        
+
         {/* <Route component={Footer} /> */}
 
-  
+      </Routes>
+        
+    
       
 
 

@@ -202,3 +202,17 @@ a{
 }
 
 /*............end of Header ...................*/
+
+
+/*............About ...................*/
+.about {
+    margin: 20px 0;
+}
+
+.about-info p{
+    font-size: 18px;
+    color: rgb(48, 47, 47);
+    line-height: 1.5;
+
+}
+/*............ End About ...................*/
