@@ -131,19 +131,81 @@ fa-trash{
 }
 
 @media screen and (min-width:664px) {
-    .same-component{
-        display:flex;
-        flex-wrap: wrap;
-        align-items: flex-start;
-    }
+
 
     .same-form{
-        flex:0 0 300px;
+        flex:0 0 400px;
     }
 
-    .same-item{
+
+}
+
+/* education admin */ 
+
+.same-admin{
+    margin-bottom: 5px;
+}
+
+.same-admin .single-education p{
+    color: lightgray;
+}
+
+/* projects */
+.projects-admin .single-project-img{
+    width: 100%;
+    height: 300px;
+}
+
+.projects-admin .single-project-img img{
+    width: 100%;
+    height: 100%;
+}
+
+@media screen and (min-width: 574px){
+    .projects-admin .single-project-img{
+        width: 100%;
+        height: 350px;
+    }
+
+    .projects-admin .single-project-img img{
+        width: 100%;
+        height: 100%;
+    }
+}
+
+@media screen and (min-width: 664px){
+    .projects-admin .single-project{
+        display: block;
+    }
+
+    .projects-admin .single-project-img{
+        width: 275px;
+        height: 350px;
+    }
+
+    .projects-admin .single-project-img img{
+        width: 100%;
+        height: 100%;
+    }
+
+    .single-project-info{
         flex: 1;
-        margin: 0;
-        margin-left: 30px;
+    }
+}
+
+@media screen and (min-width: 664px){
+    .projects-admin .single-project img{
+        width: 150px;
+        height: 150px;
+    }
+
+    .projects-admin .single-project-img img{
+        width: 150px;
+        height: 100%;
+    }
+
+    .projects-admin .single-project{
+        display: flex;
+        justify-content: space-between;
     }
 }
