@@ -3,11 +3,22 @@ import {Link} from 'react-router-dom';
 import {scroller} from 'react-scroll';
 
 export default function Footer() {
+
+  const scrollToElement = (element) => {
+    scroller.scrollTo(element,{
+      duration: 800,
+      delay: 50,
+      smooth: true,
+      offset: -80
+    })
+  }
+
+
   return (
     <React.Fragment>
       <div className="main-title">
         <h2 className="title contact-title">
-
+          Contact
         </h2>
       </div>
 
@@ -19,12 +30,12 @@ export default function Footer() {
             <div class="contact-center-links">
               <h3>Links</h3>
               <div class="contact-links">
-                <li><Link to="/">Home</Link></li>
-                <li><Link to="/">About</Link></li>
-                <li><Link to="/">Education</Link></li>
-                <li><Link to="/">Experience</Link></li>
-                <li><Link to="/">Projects</Link></li>
-                <li><Link to="/">Contacts</Link></li>
+                <li onClick={()=>scrollToElement('Home')}><Link to="/">Home</Link></li>
+                <li onClick={()=>scrollToElement('About')}><Link to="/">About</Link></li>
+                <li onClick={()=>scrollToElement('Education')}><Link to="/">Education</Link></li>
+                <li onClick={()=>scrollToElement('Experience')}><Link to="/">Experience</Link></li>
+                <li onClick={()=>scrollToElement('Projects')}><Link to="/">Projects</Link></li>
+                <li onClick={()=>scrollToElement('Contact')}><Link to="/">Contact</Link></li>
                 <li className='admin'><Link to="/">Admin</Link></li>
                 <li><Link to="/">Login</Link></li>
               </div>

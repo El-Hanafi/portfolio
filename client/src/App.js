@@ -17,7 +17,7 @@ import EditExperience from './components/EditComponents/EditExperience';
 
 import {Route,Routes} from 'react-router-dom';
 import Experience from './components/HomepageComponents/Experience';
-
+import {Element} from 'react-scroll';
 
 function App() {
   return (
@@ -25,11 +25,10 @@ function App() {
       {/* navbar component*/}
 
       <Navbar />
-
+      
       <Routes>
-
+      
         <Route index path="/" element={<><Header /><About /><Education /><Projects /><Experience /><Contact /></>} />
-
         <Route index path="/login" element={<Login/>} />
         <Route index  path="/admin" element={<Admin/>} />
         <Route index  path="/edit/:id" element={<EditAbout/>} />
