@@ -41,6 +41,7 @@ export default function Navbar() {
             <li><Link to="/">Contact</Link></li>
             <li className="admin"><Link to="/">Home</Link></li>
             <li><Link to="/">Admin</Link></li> 
+            <li><Link to="/login">Login</Link></li> 
 
           </ul>
         </div>

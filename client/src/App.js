@@ -28,23 +28,23 @@ function App() {
 
       <Routes>
 
-        <Route exact  path="/" element={<><Header /><About /><Education /><Projects /><Experience /><Contact /></>} />
+        <Route index path="/" element={<><Header /><About /><Education /><Projects /><Experience /><Contact /></>} />
 
-        <Route exact  path="/login" element={Login} />
-        <Route exact  path="/admin" element={Admin} />
-        <Route exact  path="/edit/:id" element={Education} />
+        <Route index path="/login" element={<Login/>} />
+        <Route index  path="/admin" element={<Admin/>} />
+        <Route index  path="/edit/:id" element={<EditAbout/>} />
 
-        <Route exact  path="/editEducation/:id" element={EditEducation} />
-        <Route exact  path="/editProject/:id" element={EditProjects} />
-        <Route exact  path="/editExperience/:id" element={EditExperience} />
+        <Route index  path="/editEducation/:id" element={<EditEducation />} />
+        <Route index  path="/editProject/:id" element={<EditProjects />} />
+        <Route index  path="/editExperience/:id" element={<EditExperience />} />
 
 
 
 
         {/* <Route component={Footer} /> */}
-
+        <Route element={<Footer/>} />
       </Routes>
-        
+        <Footer />
     
       
 

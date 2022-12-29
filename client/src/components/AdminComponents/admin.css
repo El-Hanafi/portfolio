@@ -1,0 +1,149 @@
+.same-form{
+    box-shadow: 0 0 2px 1px rgb(11,72,92);
+    padding: 10px;
+    width: 100%;
+}
+
+.admin-title{
+    color: #555;
+    letter-spacing: 0.2rem;
+    font-style: italic;
+    margin-bottom: 10px;
+}
+
+.same-form form{
+    display: flex;
+    flex-direction: column;
+}
+
+.same-form label{
+    letter-spacing: 0.1rem;
+    margin-top: 10px;
+    margin-bottom: 3px;
+    color: #424242;
+}
+
+form h4{
+    color: #555;
+    letter-spacing: 0.2rem;
+    font-style: italic;
+    display: none;
+}
+
+form textarea{
+    padding: 7px;
+    border: 1px solid rgb(40,185,185);
+    outline: none;
+}
+
+form input{
+    padding: 7px;
+    border: 1px solid rgb(40,185,185);
+    outline: none;
+}
+
+form button{
+    margin-top: 5px;
+    padding: 5px;
+    background: rgb(19,126,233);
+    outline: none;
+    outline: none;
+    cursor: pointer;
+    color: rgb(230,227,227);
+    font-size: 16px;
+    letter-spacing: 0.1rem;
+    width: 140px;
+}
+
+form button:hover{
+
+    background: rgb(19,126,233);
+
+}
+
+.same-item{
+    margin: 20px 0;
+    border: 1px solid lightgray;
+    padding: 10px;
+    position: relative;
+}
+
+.item-delete-tab{
+    background: crimson;
+    text-align: center;
+    font-style: italic;
+    color: white;
+    font-weight: 400;
+    width: 400px;
+    margin: 0 auto;
+    position: absolute;
+    top: 100px;
+    left: 50%;
+    display: block;
+    transform: translate(-50%);
+}
+
+.same-item .icons{
+    text-align: right;
+    margin: 0 10px;
+    font-size: 18px;
+}
+
+.same-admin .single-education{
+    margin-top: 10px;
+}
+.projects-admin .single-projects{
+    margin-top: 10px;
+}
+
+fa-trash{
+    color: crimson;
+    margin-left: 20px;
+}
+
+.fa-edit{
+    color: green;
+    margin-left: 10px;
+}
+
+.fa-trash, .fa-edit:hover{
+    opacity: 0.9;
+}
+
+/* responsive */
+
+@media screen and (min-width:664px) {
+    .same-component{
+        display:flex;
+        flex-wrap: wrap;
+        align-items: flex-start;
+    }
+
+    .same-form{
+        flex:0 0 300px;
+    }
+
+    .same-item{
+        flex: 1;
+        margin: 0;
+        margin-left: 30px;
+    }
+}
+
+@media screen and (min-width:664px) {
+    .same-component{
+        display:flex;
+        flex-wrap: wrap;
+        align-items: flex-start;
+    }
+
+    .same-form{
+        flex:0 0 300px;
+    }
+
+    .same-item{
+        flex: 1;
+        margin: 0;
+        margin-left: 30px;
+    }
+}
