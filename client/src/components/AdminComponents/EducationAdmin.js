@@ -22,13 +22,13 @@ export default function EducationAdmin() {
               
               <i className="fas fa-edit"></i>
             </Link>
-            <i class="fas fa-trash"></i>
+            <i className="fas fa-trash"></i>
             </div>
 
             <div class="single-education">
               <p>web developper</p>
             </div>
-            <h3 className='item-deleted-tab'>the message</h3>
+            <h3 className='item-delete-tab'>the message</h3>
           </div>
         </div>
       </div>

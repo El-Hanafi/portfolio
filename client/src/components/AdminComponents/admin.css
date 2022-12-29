@@ -209,3 +209,46 @@ fa-trash{
         justify-content: space-between;
     }
 }
+
+/* upload */
+.upload{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    position: relative;
+}
+
+.upload input{
+    align-self: flex-start;
+    width: 200px;
+}
+
+#file_img{
+    position: relative;
+    width: 60px;
+    height: 45px;
+    margin-right: 10px;
+    margin-top: 10px;
+    margin-left: 10px;
+
+}
+
+.upload img{
+    width: 115px;
+    display: block;
+    height: 90px;
+
+}
+
+#file_img span{
+    position: absolute;
+    top: -10px;
+    right: -7px;
+    cursor: pointer;
+    color: crimson;
+    background: lightgray;
+    width: 20px;
+    text-align: center;
+    border-radius: 50%;
+}
+
