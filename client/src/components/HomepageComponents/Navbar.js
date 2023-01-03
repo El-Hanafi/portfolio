@@ -51,7 +51,7 @@ export default function Navbar() {
             <li onClick={()=>scrollToElement('Experience')} ><Link to="/">Experience</Link></li>
             <li onClick={()=>scrollToElement('Projects')} ><Link to="/">Projects</Link></li>
             <li onClick={()=>scrollToElement('Contact')} ><Link to="/">Contact</Link></li>
-            <li><Link to="/">Admin</Link></li> 
+            <li><Link to="/admin">Admin</Link></li> 
             <li><Link to="/login">Login</Link></li> 
 
           </ul>

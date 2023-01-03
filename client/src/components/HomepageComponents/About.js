@@ -3,7 +3,7 @@ import { DataContext } from "../context/GlobalContext";
 
 export default function About() {
   const state = useContext(DataContext);
-  const [about] = state.about;
+  const {about} = state.about;
 
   return (
     <div className="main-container">

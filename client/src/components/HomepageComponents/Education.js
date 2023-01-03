@@ -1,35 +1,23 @@
-import React from 'react'
+import React, { useContext } from "react";
+import { DataContext } from "../context/GlobalContext";
 
 export default function Education() {
-  return (
-    <div className='main-container'>
-      <div className="education">
+  const state = useContext(DataContext);
+  const [education] = state.education;
 
-        <h2 className='title'>Education</h2>
+  return (
+    <div className="main-container">
+      <div className="education">
+        <h2 className="title">Education</h2>
 
         <div className="education-center">
-          
-          {/*single education*/}
-          <div className="single-education">
-            <p>CPGE</p>
-          </div>
-          {/*single education*/}
-          <div className="single-education">
-            <p>CPGE</p>
-          </div>
-          {/*single education*/}
-          <div className="single-education">
-            <p>CPGE</p>
-          </div>
-          {/*single education*/}
-          <div className="single-education">
-            <p>CPGE</p>
-          </div>
-        
-        </div>  
-        
-
+          {education.map((item) => (
+            <div className="single-education" key={item._id}>
+              <p>{item.education}</p>
+            </div>
+          ))}
+        </div>
       </div>
     </div>
-  )
+  );
 }

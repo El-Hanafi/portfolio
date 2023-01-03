@@ -24,12 +24,12 @@ export default function Footer() {
 
       <div className="main-contact">
         <div className="contact">
-          <div class="contact-center">
+          <div className="contact-center">
 
             {/*links*/}
-            <div class="contact-center-links">
+            <div className="contact-center-links">
               <h3>Links</h3>
-              <div class="contact-links">
+              <div className="contact-links">
                 <li onClick={()=>scrollToElement('Home')}><Link to="/">Home</Link></li>
                 <li onClick={()=>scrollToElement('About')}><Link to="/">About</Link></li>
                 <li onClick={()=>scrollToElement('Education')}><Link to="/">Education</Link></li>
@@ -42,12 +42,12 @@ export default function Footer() {
             </div>
 
             {/*media*/}
-            <div class="contact-center-media">
+            <div className="contact-center-media">
               <h3>Media</h3>
-              <div class="contact-media">
-                <li><a href="#"><i class="fab fa-youtube-square"></i>Youtube</a></li>
-                <li><a href="#"><i class="fab fa-linkedin-square"></i>Linkedin</a></li>
-                <li><a href="#"><i class="fab fa-github-square"></i>Github</a></li>
+              <div className="contact-media">
+                <li><a href="#"><i className="fab fa-youtube-square"></i>Youtube</a></li>
+                <li><a href="#"><i className="fab fa-linkedin-square"></i>Linkedin</a></li>
+                <li><a href="#"><i className="fab fa-github-square"></i>Github</a></li>
               </div>
             </div>
 

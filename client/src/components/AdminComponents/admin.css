@@ -108,6 +108,7 @@ fa-trash{
 
 .fa-trash, .fa-edit:hover{
     opacity: 0.9;
+    cursor: pointer;
 }
 
 /* responsive */

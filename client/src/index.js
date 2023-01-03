@@ -5,6 +5,7 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import {BrowserRouter} from 'react-router-dom';
 import {DataProvider} from './components/context/GlobalContext';
+import './fonts/cmunss.ttf';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

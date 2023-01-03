@@ -1,6 +1,10 @@
-import React from 'react';
+import React,{useContext} from 'react';
+import { DataContext } from '../context/GlobalContext';
 
 export default function Experience() {
+
+  const state = useContext(DataContext);
+  const [experience] = state.experience;
   return (
     <div className='main-container'>
       <h2 className='title'>
@@ -9,25 +13,13 @@ export default function Experience() {
       <div className='experience'>
         <div className="experience-center">
 
-          {/* static single experience */}
-          <div className="single-experience">
-            <p>Self Employed</p>
-          </div>
           
-          {/* static single experience */}
-          <div className="single-experience">
-            <p>Self Employed</p>
+          {experience.map(item=>(
+            <div className="single-experience" key={item._id}>
+            <p>{item.experience} </p>
           </div>
-
-          {/* static single experience */}
-          <div className="single-experience">
-            <p>Self Employed</p>
-          </div>
-
-          {/* static single experience */}
-          <div className="single-experience">
-            <p>Self Employed</p>
-          </div>
+          ))}
+          
         </div>
       </div>
     </div>

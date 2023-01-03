@@ -18,6 +18,7 @@ import EditExperience from './components/EditComponents/EditExperience';
 import {Route,Routes} from 'react-router-dom';
 import Experience from './components/HomepageComponents/Experience';
 import {Element} from 'react-scroll';
+import { DataProvider } from './components/context/GlobalContext';
 
 function App() {
   return (
@@ -25,10 +26,13 @@ function App() {
       {/* navbar component*/}
 
       <Navbar />
+      {/* <DataProvider>
+        <About />
+      </DataProvider> */}
       
       <Routes>
       
-        <Route index path="/" element={<><Header /><About /><Education /><Projects /><Experience /><Contact /></>} />
+        <Route index path="/" element={<><Header /><Education /><Projects /><Experience /><Contact /></>} />
         <Route index path="/login" element={<Login/>} />
         <Route index  path="/admin" element={<Admin/>} />
         <Route index  path="/edit/:id" element={<EditAbout/>} />
@@ -40,7 +44,7 @@ function App() {
 
 
 
-        {/* <Route component={Footer} /> */}
+        
         <Route element={<Footer/>} />
       </Routes>
         <Footer />
@@ -52,6 +56,7 @@ function App() {
 
 
     </div>
+
   );
 }
 

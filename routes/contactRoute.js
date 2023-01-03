@@ -6,6 +6,9 @@ router.get('/', (req,res)=>{
 });
 
 router.post('/', (req,res)=>{
+
+    let data = req.body ;
+
     let smtpTransport = nodemailer.createTransport({
         service:'Gmail',
         //the port to connect
