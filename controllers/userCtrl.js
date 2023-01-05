@@ -66,7 +66,7 @@ const userCtrl = {
     },
     
     //verify
-    verifyToken: async (req,res) => {
+    verifyToken: (req,res) => {
         try {
 
             const token = req.header("Authorization")

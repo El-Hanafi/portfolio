@@ -1,13 +1,19 @@
-import React, { useState } from 'react';
+import React, { useState,useContext } from 'react';
 import './navbar.css';
 import {Link} from 'react-router-dom';
-import logo from '../../images/logo.jpg';
+import logo from '../../images/logo.svg';
+import { DataContext } from '../context/GlobalContext';
 
 import {scroller} from 'react-scroll';
 
 export default function Navbar() {
 
+  const state= useContext(DataContext);
+  const [isLogin, setIsLogin] = state.isLogin;
+  const [toggle, setToggle] = useState();
 
+
+  // for scroll navbar elements
   const scrollToElement = (element) => {
     scroller.scrollTo(element,{
       duration: 800,
@@ -17,16 +23,23 @@ export default function Navbar() {
     })
   }
 
-  const [toggle, setToggle] = useState();
 
+  //for toggling
   const actToggle = ()=>{
     setToggle(!toggle)
   }
 
+  //for closing the navbar if opened
   const closeNavbar=()=>{
     if(toggle===true){
       setToggle(false);
     }
+  }
+
+  // clear localstorage enable login
+  const logOutSubmit = ()=>{
+    localStorage.clear();
+    setIsLogin(false);
   }
 
   return (
@@ -52,8 +65,9 @@ export default function Navbar() {
             <li onClick={()=>scrollToElement('Projects')} ><Link to="/">Projects</Link></li>
             <li onClick={()=>scrollToElement('Contact')} ><Link to="/">Contact</Link></li>
             <li><Link to="/admin">Admin</Link></li> 
-            <li><Link to="/login">Login</Link></li> 
+            <li className={isLogin ?'':'adminLi'}><Link to={isLogin ? '/admin/':'/'}>{isLogin ? <div className='admin'>Admin</div> : ''}</Link></li> 
 
+            <li onClick={logOutSubmit}><Link to={isLogin?'/':'/login'}>{isLogin ? 'Logout' : 'Login'}</Link></li>
           </ul>
         </div>
 

@@ -1,23 +1,22 @@
 import React from 'react';
-import ReactDOM from 'react-dom/client';
+import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import {BrowserRouter} from 'react-router-dom';
 import {DataProvider} from './components/context/GlobalContext';
-import './fonts/cmunss.ttf';
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-  <BrowserRouter>
-    <React.StrictMode>
-      <DataProvider>
-        <App />
-      </DataProvider>
-      <App />
-    </React.StrictMode>
+ReactDOM.render(
+ <BrowserRouter>
+  <React.StrictMode>
+     <DataProvider>
+       <App />
+     </DataProvider>
+    
+  </React.StrictMode>
   </BrowserRouter>
-  
+  ,
+  document.getElementById('root')
 );
 
 // If you want to start measuring performance in your app, pass a function

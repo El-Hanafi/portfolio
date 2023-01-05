@@ -3,7 +3,6 @@ import "./contact.css";
 import BackImg from "../../images/im4.jpg";
 import load2 from "../../images/load2.gif";
 import axios from "axios";
-import { set } from "mongoose";
 
 export default function Contact() {
   const [name, setName] = useState("");

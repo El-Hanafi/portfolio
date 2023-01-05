@@ -16,12 +16,6 @@ export default function Footer() {
 
   return (
     <React.Fragment>
-      <div className="main-title">
-        <h2 className="title contact-title">
-          Contact
-        </h2>
-      </div>
-
       <div className="main-contact">
         <div className="contact">
           <div className="contact-center">

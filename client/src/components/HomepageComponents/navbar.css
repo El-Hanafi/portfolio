@@ -1,44 +1,47 @@
-.nav_container{
+
+.nav-container{
     background-color: rgb(9,93,119);
     margin:0 auto;
     max-width: 1400px;
     position: sticky;
-    top: 0;
+    top:0;
     z-index: 10;
+
 }
 
 nav{
-    max-width: 1200px;
-    margin: 0 auto;
+    max-width: 1280px;
+    margin:0 auto;
 }
 
 .logoBtn{
     display: flex;
     padding: 5px 10px;
-    border-bottom: 1px solid rgb(168, 168, 168);
+    border-bottom: 1px solid rgb(0, 132, 255);
     align-items: center;
     justify-content: space-between;
-
 }
 
 .logoBtn a{
-    color: white;
+
+    color: rgb(0, 183, 255);
     width: 35px;
     align-self: center;
-    border-radius: 50%;
+    border-radius: 10%;
     opacity: 1;
     box-shadow: 0 0 1px 2px lightgray;
 }
 
 .logoBtn a:hover{
+    color: white;
     opacity: 0.8;
-    box-shadow: 0 0 1px 3px lightgray;
+    box-shadow: 0 0 6px 5px rgb(0, 174, 255);
 }
 
-.logoBtn a:hover{
-    width: 35px;
+.logoBtn img{
+    width:35px;
     display: block;
-    border-radius: 50%;
+    border-radius: 10%;
     height: 40px;
     padding: 2px;
 }
@@ -49,26 +52,27 @@ nav{
     background-color: lightgray;
     width: 35px;
     padding: 1px;
-    margin: 5px;
+    margin:5px;
     transition: all 0.5s ease-in-out;
+
 }
 
-
-animateBar.bar1{
+.animateBar.bar1{
     transform: rotate(-45deg) translate(-5px, 5px);
     background: white;
     width: 30px;
 }
 
-animateBar.bar2{
-    opacity: 0;
+.animateBar.bar2{
+  opacity: 0;
 }
 
-animateBar.bar3{
+.animateBar.bar3{
     transform: rotate(45deg) translate(-4px, -5px);
     background: white;
     width: 30px;
 }
+
 
 .btn{
     cursor: pointer;
@@ -76,27 +80,27 @@ animateBar.bar3{
 
 .links{
     width: 100%;
-    /* transform: translateX(-100%);
+    transform: translateX(-100%);
     position: fixed;
-    top: 51px;
+    top:51px;
     bottom: 0;
-    left; 0;
-    right: 0; */
+    left:0;
+    right:0;
     background: rgb(9,93,119);
     z-index: 10;
     opacity: 1;
     transition: transform 0.4s ease-in-out;
 }
 
+
 .new-links{
     width: 100%;
     transform: translateX(0%);
     position: fixed;
-    top: 51;
+    top:51;
     bottom: 0;
-    left: 0;
+    left:0;
     right: 0;
-
 }
 
 .links li a{
@@ -105,80 +109,70 @@ animateBar.bar3{
     color: lightgray;
     transition: all 0.3s ease-in-out;
     font-size: 18px;
+
 }
 
+
 .links li a:hover{
-    padding: 10px;
+    padding: 10px 25px;
     color: white;
 }
 
 .adminLi{
     display: none;
+
 }
 
 .admin{
     color: rgb(93,241,93);
 }
 
+
 @media screen and (min-width:780px){
-    .logoBtn{
-       border: none; 
-       padding: 0;
-    }
+ .logoBtn{
+     border:none ;
+     padding: 0;
+ }
 
-    .btn {
-        display: none;
-    }
-
-    nav{
-        max-width: 1280px;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 5px 10px;
-    }
-
-    .links{
-        position: relative;
-        display: flex;
-        width: auto;
-        top: auto;
-        transform: translateX(0%);
-    }
-
-    .new-links{
-        width: 100%;
-        transform: translateX(0%);
-        position: relative;
-        top: auto;
-    }
-
-    .links li a:hover{
-        padding: 10px;
-        background: none;
-    }
-
-    .admin{
-        color: rgb(93,241,93);
-
-    }
-
-    @media screen and (min-width: 780px) {
-        .logoBtn{
-            border: none;
-            padding: 0; 
-        }
-
-        .btn{
-            display: none;
-        }
-
-        nav{
-            max-width: 1280px;
-            display: flex;
-        }
-
-
-    }
+.btn{
+    display: none;
 }
 
+nav{
+    max-width: 1280px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding:5px 10px;
+}
+
+.links{
+    position: relative;
+    display: flex;
+    width: auto;
+    top:auto;
+    transform: translateX(0%);
+
+}
+
+.new-links{
+    width: 100%;
+    transform: translateX(0%);
+    position: relative;
+    top:auto;
+}
+
+.links li a{
+   font-size: 18px;
+  
+  }
+  
+
+.links li a:hover{
+  padding:10px;
+  background:none ;
+}
+
+
+
+}

@@ -1,12 +1,12 @@
 import React, { useEffect, useState }  from 'react';
-import {Link, useNavigate} from 'react-router-dom';
+import {Link, useHistory} from 'react-router-dom';
 import './edit.css';
 import axios from "axios";
 
 export default function EditAbout(props) {
   const [about, setAbout] = useState("");
   const [message, setMessage] = useState("");
-  const history = useNavigate();
+  const history = useHistory();
 
   //getting the specific id
   useEffect(()=>{

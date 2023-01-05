@@ -1,3 +1,4 @@
+
 .edit{
     min-height: 70vh;
     margin-bottom: 20px;
@@ -6,8 +7,9 @@
 .edit .same-component{
     display: block;
     max-width: 400px;
-    margin: 0 auto;
+    margin:0 auto;
     margin-top: 50px;
+
 }
 
 .edit .same-form .btns{
@@ -29,14 +31,16 @@
     font-weight: 400;
     font-style: italic;
     letter-spacing: 0.1rem;
-    color: green;
+    color:green;
 }
 
 .new-updated{
     display: block;
 }
 
-/* upload from */
+
+
+/* upload form */
 
 .edit .upload{
     display: flex;
@@ -46,23 +50,29 @@
 }
 
 .edit .upload input{
-    align-self: flex-start;
-    width: 200px;
+   align-self: flex-start; 
+   width: 200px;
 }
 
 .edit #file_img{
-    width: 60px;
+    width:60px;
     position: relative;
-    width: 100px;
+    width:100px;
     height: 45px;
     margin-right: 10px;
     margin-top: 10px;
-    margin-left:10px;
+    margin-left: 10px;
+
 }
 
 .edit .upload img{
-    width: 100px;
+    width:100px;
     display: block;
     height: 75px;
+
 }
+
+
+
+
 

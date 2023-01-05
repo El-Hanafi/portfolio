@@ -1,6 +1,6 @@
-import React from 'react'
+import React from 'react';
 
-import profile from '../../images/ody.JPG';
+import profile from '../../images/photo.jpg';
 import Particles from 'react-tsparticles';
 import Typewriter from 'typewriter-effect';
  
@@ -13,25 +13,84 @@ export default function Header() {
           <Particles className='particleComp'
           height="400px"
           width="100%"
+          id="tsparticles"
           params={{
-            particles:{
-              number:{
-                value:100, 
-                density:{
-                  enable: false,
-                  value_area: 800
-                }
-              }
+            background: {
+              color: {
+                value: "rgb(17,115,145)",
+              },
             },
-
-            "interactivity": {
-              "events":{
-                "onHover":{
-                  "enable":true,
-                  "mode":  "repulse"
-                }
-              }
-            }
+          fpsLimit: 20,
+          interactivity: {
+            detectsOn: "canvas",
+            events: {
+              onClick: {
+                enable: true,
+                mode: "push",
+              },
+              onHover: {
+                enable: true,
+                mode: "repulse",
+              },
+              resize: true,
+            },
+            modes: {
+              bubble: {
+                distance: 200,
+                duration: 2,
+                opacity: 0.8,
+                size: 40,
+              },
+              push: {
+                quantity: 4,
+              },
+              repulse: {
+                distance: 200,
+                duration: 0.1,
+              },
+            },
+          },
+          particles: {
+            color: {
+              value: "#ffffff",
+            },
+            links: {
+              color: "#ffffff",
+              distance: 150,
+              enable: true,
+              opacity: 0.5,
+              width: 1,
+            },
+            collisions: {
+              enable: true,
+            },
+            move: {
+              direction: "none",
+              enable: true,
+              outMode: "bounce",
+              random: false,
+              speed: 5,
+              straight: false,
+            },
+            number: {
+              density: {
+                enable: true,
+                value_area: 500,
+              },
+              value: 80,
+            },
+            opacity: {
+              value: 0.5,
+            },
+            shape: {
+              type: "circle",
+            },
+            size: {
+              random: true,
+              value: 1,
+            },
+          },
+          detectRetina: true,
 
           }}
           />
@@ -50,10 +109,14 @@ export default function Header() {
           </div>
 
           <div className="cv">
-            <span><b><a href="#" target="_blank" rel="noreferrer"><i className='fas fa-file-pdf'></i></a></b></span>
+          <span>
+              <b>Cv:</b>{" "}
+              <a href="https://drive.google.com/file/d/1-zb_MYrMAPHZWGoaxWVJMs-9JW0DaXnu/view?usp=sharing" target="_blank" rel="noreferrer">
+                <i className="fas fa-file-pdf"></i>
+              </a>
+            </span>
           </div>
         </div>
-
       </div>
 
 
@@ -85,11 +148,12 @@ export default function Header() {
                 <h4>m.h.benabbou@gmail.com</h4>
               </div>
 
-              <div className="personalInfo-img">
-                <img src={profile} alt="profile" />
-              </div>
+              
 
           </div>
+          <div className="personalInfo-img">
+                <img src={profile} alt="profile" />
+              </div>
         </div>
       </div>
     </React.Fragment>

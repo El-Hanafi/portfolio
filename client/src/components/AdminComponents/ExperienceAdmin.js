@@ -1,107 +1,148 @@
-import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
-import "./admin.css";
-import axios from "axios";
 
-export default function ExperienceAdmin() {
-  const [experience, setExperience] = useState("");
-  const [experienceData, setExperienceData] = useState([]);
-  const [message, setMessage] = useState("");
-  const [messageCond, setMessageCond] = useState(false);
+import React,{useEffect,useState} from 'react';
+import {Link} from 'react-router-dom';
+import axios from 'axios';
+import './admin.css';
 
-  useEffect(() => {
-    //fetching the data
-    const fetchData = async () => {
-      try {
-        const res = await axios.get("/experience");
+
+
+
+const ExperienceAdmin = () => {
+
+    const [experience, setExperience] = useState('');
+    const [experienceData, setExperienceData] = useState([]);
+    const [message, setMessage] = useState('');
+    const [messageCond,setMessageCond] = useState(false);
+
+
+    useEffect(()=>{
+
+        // fetching data
+        const fetchData= async()=>{
+        
+            try {
+            
+         const res = await axios.get(`/experience`);
+        //  console.log(res.exprerience);
         setExperienceData(res.data);
-      } catch (err) {}
-    };
+                
+          } catch (err) {
+                    
+         }
+        
+        }
+        
+        fetchData();
+        
+        },[])
 
-    fetchData();
-  }, []);
 
-  //onchange
-  const onchangeExperience = (e) => {
+// onchange
+const onchangeExperience = (e)=>{
     setExperience(e.target.value);
-    console.log(experience);
-  };
+    // console.log(experience);
+   }
 
-  //submit experience
-  const handleSubmit = (e) => {
+
+   // submit experience
+const handleSubmit = (e)=>{
     e.preventDefault();
-
+    
     const postExperience = {
-      experience,
-    };
+        experience
+    }
+    
+    
+    setExperience('');
+    axios.post(`/experience`, postExperience)
+    .then(res=>{
+    
+    })
+    .catch(err=>console.log(err))
+    
+    
+    
+    }
 
-    setExperience("");
-    axios
-      .post(`/experience`, postExperience)
-      .then((res) => setExperience([...experienceData]))
-      .catch((err) => console.log(err));
-  };
 
-  //delete Experience
-  const deleteExperience = (id) => {
-    axios
-      .delete(`/experience/${id}`)
-      .then((res) => {
+
+    // delete about
+const deleteExperience=(id)=>{
+
+    axios.delete(`/experience/${id}`)
+    .then(res=>{
         setMessageCond(true);
         setMessage(`${res.data.msg}`);
+     
+      const timeout=  setTimeout(()=>{
+           setMessage('');
+            setMessageCond(false);
+    
+        },2000)
 
-        setTimeout(() => {
-          setMessage("");
-          setMessageCond(false);
-        }, 2000);
-      })
-      .catch((error) => console.log(error));
-    //delete from ui
-    const experienceFilterDel = experienceData.filter(
-      (item) => item._ied !== id
-    );
+        return ()=>clearTimeout(timeout);
 
+
+    }).catch(err=>console.log(err))
+    
+    
+    
+    // delete fro ui
+    const experienceFilterDel = experienceData.filter(item=>item._id !==id)
+    
     setExperienceData(experienceFilterDel);
-  };
+    
+    
+    }
 
-  return (
-    <div className="same-component">
-      <div class="same-form">
-        <form onSubmit={handleSubmit}>
-          <h4>Experience component</h4>
-          <label htmlFor="text">Experience</label>
-          <input type="text" onChange={onchangeExperience} value={experience} />
-          <button type="submit">Add item</button>
-        </form>
-      </div>
 
-      <div class="same-item">
-        <div class="experience-info">
-          {experienceData.map((item) => {
-            <div class="same-admin" key={item._id}>
-              <div className="icons">
-                <Link to={`/editExperience/${item._id}`}>
-                  <i className="fas fa-edit"></i>
-                </Link>
-                <i className="fas fa-trash" onClick={()=>deleteExperience(item._id)}></i>
-              </div>
-              {/* single education */}
-              <div className="single-experience">
-                <p>Designer</p>
-              </div>
-              <h3
-                className={
-                  setMessageCond
-                    ? "new-delete item-delete-tab"
-                    : "item-deleted-tab"
-                }
-              >
-                {message}
-              </h3>
-            </div>;
-          })}
-        </div>
-      </div>
+
+
+
+
+
+
+
+
+
+
+    return (
+
+        <div className="same-component" >
+          <div className="same-form">
+              <form onSubmit={handleSubmit}>
+                  <h4>Experience component</h4>
+                  <label htmlFor="text">Experience</label>
+                  <input type="text" onChange={onchangeExperience} value={experience}  />
+                  <button type="submit">Add item</button>
+              </form>
+          </div>
+
+<div className="same-item">
+    <div className="about-info">
+      {experienceData.map(item=>(
+         <div className="same-admin" key={item._id}>
+         <div className="icons">
+              <Link to={`/editExperience/${item._id}`}><i className="fas fa-edit"></i></Link>
+                   <i className="fas fa-trash" onClick={()=>deleteExperience(item._id)}></i>
+          </div>
+          {/* single experience */}
+          <div className="single-experience">
+      <p>{item.experience}</p>
+ 
+          </div>
+          <h3 className={messageCond?"new-delete item-delete-tab":"item-delete-tab"}>{message}</h3>
+         </div>
+
+
+      ))}
     </div>
-  );
+</div>
+
+
+
+        </div>
+    )
 }
+
+export default ExperienceAdmin

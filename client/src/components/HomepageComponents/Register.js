@@ -1,6 +1,44 @@
-import React from "react";
+import React,{useState} from "react";
 import { Link } from "react-router-dom";
+import axios from 'axios';
+
 export default function Register() {
+
+  const [user, setUser] = useState({username: '', email:'', password:''});
+  const [err,setErr] =useState('');
+
+
+  // onChange inputs
+  const onChangeInput = (e)=>{
+    const {name, value} = e.target;
+    setUser({...user, [name]:value})
+    setErr('');
+  }
+  
+  // login submit
+
+  const registerSubmit = async (e) => {
+    e.preventDefault();
+
+    try {
+
+      const res = await axios.post(`/user/register`, {
+        username:user.username,
+        email:user.email,
+        password: user.password
+      })
+
+      setUser({username:'', email:'', password:''});
+
+      setErr(res.data.msg);
+
+    } catch (err) {
+      err.response.data.msg && setErr(err.response.data.msg)
+    }
+  }
+
+
+
   return (
     <div className="login">
       <div className="main-container">
@@ -8,14 +46,16 @@ export default function Register() {
       </div>
 
       <div className="login-center">
-        <form action="">
-          <p>you edited it</p>
+        <form onSubmit={registerSubmit}>
+          <p>{err}</p>
 
-          <label htmlFor="name">Name</label>
+          <label htmlFor="username">Name</label>
           <input
-            type="name"
-            placeholder="import name.."
-            name="name"
+            type="username"
+            placeholder="import username.."
+            name="username"
+            value={user.username}
+            onChange={onChangeInput}
             required
           />
 
@@ -24,14 +64,18 @@ export default function Register() {
             type="email"
             placeholder="import email.."
             name="email"
+            value={user.email}
+            onChange={onChangeInput}
             required
           />
 
           <label htmlFor="password">Password</label>
           <input
             type="password"
-            placeholder="import email..."
-            name="email"
+            placeholder="enter pwd"
+            name="password"
+            value={user.password}
+            onChange={onChangeInput}
             required
           />
 

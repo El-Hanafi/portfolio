@@ -1,8 +1,4 @@
 import React, { useContext } from "react";
-import logo from '../../images/cable.jpg';
-import project1 from '../../images/project1.jpg';
-import project2 from '../../images/project2.jpg';
-import project3 from '../../images/project3.jpg';
 import { DataContext } from "../context/GlobalContext";
 
 export default function Projects() {
@@ -15,9 +11,9 @@ export default function Projects() {
       <div className="projects">
         <h2 className="title">Project</h2>
         <div className="projects-center">
-
-          {projects.map(item=>{
-            {/* single project */}
+        
+        {projects.map(item=>(
+            /* single project */
           <div className="single-project" key={item._id}>
 
             <div className="single-project-img">
@@ -30,8 +26,9 @@ export default function Projects() {
             </div> 
 
           </div>
-          })}
+          ))}
 
+          
         </div>
       </div>
     </div>
