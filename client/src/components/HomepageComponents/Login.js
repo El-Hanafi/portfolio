@@ -57,7 +57,7 @@ export default function Login() {
         <p>{err}</p>
         <label htmlFor="email">Email</label>
         <input type="email" 
-        placeholder="import email.." 
+        placeholder="enter email" 
         name ="email"
         value={user.email}
         onChange={onChangeInput}
@@ -66,8 +66,8 @@ export default function Login() {
 
         <label htmlFor="password">Password</label>
         <input type="password" 
-        placeholder='import email...' 
-        name='email'
+        placeholder='enter password' 
+        name='password'
         value={user.password}
         onChange={onChangeInput}
         required

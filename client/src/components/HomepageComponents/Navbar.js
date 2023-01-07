@@ -64,7 +64,6 @@ export default function Navbar() {
             <li onClick={()=>scrollToElement('Experience')} ><Link to="/">Experience</Link></li>
             <li onClick={()=>scrollToElement('Projects')} ><Link to="/">Projects</Link></li>
             <li onClick={()=>scrollToElement('Contact')} ><Link to="/">Contact</Link></li>
-            <li><Link to="/admin">Admin</Link></li> 
             <li className={isLogin ?'':'adminLi'}><Link to={isLogin ? '/admin/':'/'}>{isLogin ? <div className='admin'>Admin</div> : ''}</Link></li> 
 
             <li onClick={logOutSubmit}><Link to={isLogin?'/':'/login'}>{isLogin ? 'Logout' : 'Login'}</Link></li>

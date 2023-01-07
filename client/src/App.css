@@ -390,7 +390,6 @@ a{
 }
 
 .single-experience{
- 
     margin-bottom: 20px;
     width: 100%;
     font-size: 18px;
@@ -414,6 +413,7 @@ a{
      margin-right: 0;
      margin-left: 0;
      padding: 10px;
+     clip-path: polygon(0  0,100% 0,95% 100%, 0% 100%);
  }
 }
 
