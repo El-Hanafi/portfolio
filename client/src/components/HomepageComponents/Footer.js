@@ -39,9 +39,9 @@ export default function Footer() {
             <div className="contact-center-media">
               <h3>Media</h3>
               <div className="contact-media">
-                <li><a href="#"><i className="fab fa-youtube-square"></i>Youtube</a></li>
-                <li><a href="#"><i className="fab fa-linkedin-square"></i>Linkedin</a></li>
-                <li><a href="#"><i className="fab fa-github-square"></i>Github</a></li>
+              <li><a href="https://www.youtube.com/channel/UCpjRK_CyvOQLN8fy0TJoUTw"><i className="fab fa-youtube-square"></i>Youtube</a></li>
+         <li><a href="https://github.com/El-Hanafi" target="_blank" rel="noreferrer"><i className="fab fa-github-square"></i>Github</a></li>
+         <li><a href="https://www.linkedin.com/in/mohamed-el-hanafi-benabbou/" target="_blank" rel="noreferrer"><i className="fab fa-linkedin"></i>Linkdedin</a></li>
               </div>
             </div>
 

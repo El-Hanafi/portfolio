@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import {Link} from 'react-router-dom';
+import {API_URL} from '../context/GlobalContext';
 
 export default function EducationAdmin() {
 
@@ -13,7 +14,7 @@ export default function EducationAdmin() {
     //fetching the data
     const fetchData = async () => {
       try {
-        const res = await axios.get("/education");
+        const res = await axios.get(`${API_URL}/education`);
         setEducationData(res.data);
       } catch (err) {
 
@@ -46,7 +47,7 @@ export default function EducationAdmin() {
   //delete education
     const deleteEducation = (id) => {
       axios
-        .delete(`/education/${id}`)
+        .delete(`${API_URL}/education/${id}`)
         .then((res) => {
           setMessageCond(true);
           setMessage(`${res.data.msg}`);

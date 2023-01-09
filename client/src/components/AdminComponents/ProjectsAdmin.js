@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
+import {API_URL} from '../context/GlobalContext';
 
 const initialState = {
   project_id: "",
@@ -48,7 +49,7 @@ export default function ProjectAdmin() {
 
     const handleDestroy = async () => {
       try {
-        await axios.post("/destroy", { public_id: images.public.id });
+        await axios.post(`${API_URL}/destroy`, { public_id: images.public.id });
         setImages(false);
       } catch (err) {
         console.log(err.response.data.msg);
@@ -67,7 +68,7 @@ export default function ProjectAdmin() {
       e.preventDefault();
 
       try {
-        axios.post('/project/', {...project, images})
+        axios.post(`${API_URL}/project/`, {...project, images})
         .then(res=>{
           setMessage(res.data.msg);
           setTimeout(()=>{
@@ -91,7 +92,7 @@ export default function ProjectAdmin() {
       useEffect(()=>{
         const fetchData = async () => {
             try {
-              const res = await axios.get('/project');
+              const res = await axios.get(`${API_URL}/project`);
               setProjectData(res.data);
             } catch (err) {
               console.log(err)
@@ -103,7 +104,7 @@ export default function ProjectAdmin() {
   
     //delete functionality
       const deleteProject = (id)=>{
-        axios.delete(`/project/${id}`)
+        axios.delete(`${API_URL}/project/${id}`)
         .then(res=>{
           setMessageCond(true);
           setMessage(res.data.msg);

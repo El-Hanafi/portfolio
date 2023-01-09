@@ -2,6 +2,8 @@
 import axios from 'axios';
 import React, { createContext,useState,useEffect } from 'react';
 
+export const API_URL = "https://portfolioback.herokuapp.com";
+
 export const DataContext = createContext();
 
 export const DataProvider = ({children})=>{
@@ -19,7 +21,7 @@ const checkLogin= async()=>{
     const token = localStorage.getItem('tokenStore');
     if(token){
 
-const verified = await axios.get(`/user/verify`,{headers:{Authorization:token}})
+const verified = await axios.get(`${API_URL}/user/verify`,{headers:{Authorization:token}})
 //  console.log(verified);
 
  setIsLogin(verified.data);
@@ -82,23 +84,23 @@ try {
 const fetchData= async ()=>{
 
      // ...for fetchning about...
-    const res1 = await axios.get(`/about`);
+    const res1 = await axios.get(`${API_URL}/about`);
     // console.log(res1.data);
     setAbout(res1.data);
 
 // ...for fetchning education...
-    const res2 = await axios.get(`/education`);
+    const res2 = await axios.get(`${API_URL}/education`);
     // console.log(res2.data);
     setEducation(res2.data); 
 
     // ...for fetching projects
-    const res4 = await axios.get(`/project`);
+    const res4 = await axios.get(`${API_URL}/project`);
     // console.log(res4.data);
     setProjects(res4.data);
 
 
 // ...for fetchning experience...
-    const res3 = await axios.get(`/experience`);
+    const res3 = await axios.get(`${API_URL}/experience`);
     // console.log(res3.data);
     setExperience(res3.data);
 

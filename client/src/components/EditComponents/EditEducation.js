@@ -1,6 +1,7 @@
 import React,{useState,useEffect} from 'react';
 import {Link,useHistory, useParams} from 'react-router-dom';
 import axios from 'axios';
+import {API_URL} from '../context/GlobalContext';
 
 
 
@@ -16,7 +17,7 @@ const {id} = useParams();
 // getting the specific id
 useEffect(()=>{
 
-    axios.get(`/education/${id}`)
+    axios.get(`${API_URL}/education/${id}`)
     .then(res=>{
         setEducation(res.data.education);
     }).catch(err=>console.log(err))
@@ -43,7 +44,7 @@ const updateEducation = (e)=>{
         education
     }
 
-axios.put(`/education/update/${props.match.params.id}`, postEducation)
+axios.put(`${API_URL}/education/update/${props.match.params.id}`, postEducation)
 .then(res=>{
     setMessage(res.data.msg);
 
@@ -52,7 +53,7 @@ axios.put(`/education/update/${props.match.params.id}`, postEducation)
 setEducation('');
 
 const timeout =   setTimeout(()=>{
- history.push("/admin");
+ history.push(`${API_URL}/admin`);
 },2000)
 
 return ()=>clearTimeout(timeout);

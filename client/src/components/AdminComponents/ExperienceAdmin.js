@@ -4,6 +4,7 @@ import {Link} from 'react-router-dom';
 import axios from 'axios';
 import './admin.css';
 
+import {API_URL} from '../context/GlobalContext';
 
 
 
@@ -22,7 +23,7 @@ const ExperienceAdmin = () => {
         
             try {
             
-         const res = await axios.get(`/experience`);
+         const res = await axios.get(`${API_URL}/experience`);
         //  console.log(res.exprerience);
         setExperienceData(res.data);
                 
@@ -54,7 +55,7 @@ const handleSubmit = (e)=>{
     
     
     setExperience('');
-    axios.post(`/experience`, postExperience)
+    axios.post(`${API_URL}/experience`, postExperience)
     .then(res=>{
     
     })
@@ -69,7 +70,7 @@ const handleSubmit = (e)=>{
     // delete about
 const deleteExperience=(id)=>{
 
-    axios.delete(`/experience/${id}`)
+    axios.delete(`${API_URL}/experience/${id}`)
     .then(res=>{
         setMessageCond(true);
         setMessage(`${res.data.msg}`);

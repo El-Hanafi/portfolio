@@ -4,7 +4,7 @@ import axios from "axios";
 import { set } from "mongoose";
 
 const initialState = {
-  proejct_id: "",
+  project_id: "",
   title: "",
   description: "",
 };

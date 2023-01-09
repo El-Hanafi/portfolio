@@ -1,6 +1,8 @@
 {
-  "name": "client",
-  "proxy": "https://portfolio-production-3e76.up.railway.app/",
+  "name": "hostinger-react",
+  "homepage": "http://mohamedelhanafi.com",
+  "description": "my react application",
+  "proxy": "http://portfolio-env.eba-pxsk9nyz.us-east-2.elasticbeanstalk.com",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -41,5 +43,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "engines" : { 
+    "node" : "14.18.1"
   }
 }

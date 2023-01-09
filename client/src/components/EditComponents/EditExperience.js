@@ -1,6 +1,7 @@
 import React,{useEffect, useState} from 'react';
 import {Link, useHistory} from 'react-router-dom';
 import axios from 'axios';
+import {API_URL} from '../context/GlobalContext';
 
 export default function EditExperience(props) {
 
@@ -10,7 +11,7 @@ export default function EditExperience(props) {
 
     //getting the specific id
     useEffect(()=>{
-      axios.get('/experience/${props.match.params.id}')
+      axios.get('${API_URL}/experience/${props.match.params.id}')
       .then(res=>{
         setExperience(res.data.experience);
       })
@@ -29,7 +30,7 @@ export default function EditExperience(props) {
       const postExperience = {
         experience
       }
-      axios.put(`/experience/update/${props.match.params.id}`, postExperience)
+      axios.put(`${API_URL}/experience/update/${props.match.params.id}`, postExperience)
       .then(res => {
         setMessage(res.data.msg);
       }).catch(err=>console.log(err))
@@ -37,7 +38,7 @@ export default function EditExperience(props) {
       setExperience('');
   
       setTimeout(()=>{
-        history.push("/admin");
+        history.push(`${API_URL}/admin`);
       },2000)
   
     }

@@ -2,6 +2,7 @@ import React, { useEffect, useState }  from 'react';
 import {Link, useHistory} from 'react-router-dom';
 import './edit.css';
 import axios from "axios";
+import {API_URL} from '../context/GlobalContext';
 
 export default function EditAbout(props) {
   const [about, setAbout] = useState("");
@@ -10,7 +11,7 @@ export default function EditAbout(props) {
 
   //getting the specific id
   useEffect(()=>{
-    axios.get('/about/${props.match.params.id}')
+    axios.get(`${API_URL}/about/${props.match.params.id}`)
     .then(res=>{
       setAbout(res.data.about);
     })
@@ -29,7 +30,7 @@ export default function EditAbout(props) {
     const postAbout = {
       about
     }
-    axios.put(`/about/update/${props.match.params.id}`, postAbout)
+    axios.put(`${API_URL}/about/update/${props.match.params.id}`, postAbout)
     .then(res => {
       setMessage(res.data.msg);
     }).catch(err=>console.log(err))
@@ -37,7 +38,7 @@ export default function EditAbout(props) {
     setAbout('');
 
     setTimeout(()=>{
-      history.push("/admin");
+      history.push(`${API_URL}/admin`);
     },2000)
 
   }

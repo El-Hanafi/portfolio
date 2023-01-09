@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
+import {API_URL} from '../context/GlobalContext';
 
 export default function AboutAdmin() {
   const [about, setAbout] = useState("");
@@ -12,7 +13,7 @@ export default function AboutAdmin() {
     //fetching the data
     const fetchData = async () => {
       try {
-        const res = await axios.get("/about");
+        const res = await axios.get(`${API_URL}/about`);
         setAboutData(res.data);
       } catch (err) {
 
@@ -39,7 +40,7 @@ export default function AboutAdmin() {
 
     setAbout("");
     axios
-      .post(`/about`, postAbout)
+      .post(`${API_URL}/about`, postAbout)
       .then((res) => setAbout([...aboutData]))
       .catch((err) => console.log(err));
   };
@@ -47,7 +48,7 @@ export default function AboutAdmin() {
   //delete About
   const deleteAbout = (id) => {
     axios
-      .delete(`/about/${id}`)
+      .delete(`${API_URL}/about/${id}`)
       .then((res) => {
         setMessageCond(true);
         setMessage(`${res.data.msg}`);
