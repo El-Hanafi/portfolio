@@ -30,8 +30,7 @@ export default function Footer() {
                 <li onClick={()=>scrollToElement('Experience')}><Link to="/">Experience</Link></li>
                 <li onClick={()=>scrollToElement('Projects')}><Link to="/">Projects</Link></li>
                 <li onClick={()=>scrollToElement('Contact')}><Link to="/">Contact</Link></li>
-                <li className='admin'><Link to="/">Admin</Link></li>
-                <li><Link to="/">Login</Link></li>
+
               </div>
             </div>
 
